@@ -6,16 +6,18 @@
         <div class="content">{{ item.content }}</div>
       </li>
     </ul>
+  </div>
 
-    <button @click="reload" id="btnReload">Reload</button>
+  <h1 class="main-title">看世界</h1>
 
-    <div class="pagination">
-      <button :disabled="currentPage === 1" @click="prevPage">上一页</button>
-      <button v-for="page in pages" :key="page" :class="{active: currentPage === page}" @click="currentPage = page">
-        {{ page }}
-      </button>
-      <button :disabled="currentPage === totalPages" @click="nextPage">下一页</button>
-    </div>
+  <button class="rank" @click="rank">排行榜</button>
+
+  <div class="pagination">
+    <button :disabled="currentPage === 1" @click="prevPage">上一页</button>
+    <button v-for="page in pages" :key="page" :class="{active: currentPage === page}" @click="currentPage = page">
+      {{ page }}
+    </button>
+    <button :disabled="currentPage === totalPages" @click="nextPage">下一页</button>
   </div>
 </template>
 
@@ -90,13 +92,8 @@ const goToDetail = (id) => {
   router.push('/home/detail/' + id)
 }
 
-// 刷新数据
-const reload = () => {
-  const list = document.getElementById('myList')
-  list.classList.remove('rolldown-list')
-  setTimeout(() => {
-    list.classList.add('rolldown-list')
-  }, 1)
+const rank = () => {
+  router.push('/home/rank')
 }
 
 // 监听currentPage变化，获取数据
@@ -177,7 +174,7 @@ body {
 }
 
 .rolldown-list li:nth-child(2n+1) {
-  background-color: #ccc;
+  background-color: #d1f8cd;
 }
 
 .title {
@@ -198,19 +195,6 @@ body {
   margin-left: -25%;
 }
 
-#btnReload {
-  float: right;
-  color: #333;
-  background: #ccc;
-  text-transform: uppercase;
-  border: none;
-  padding: .5em 1em;
-}
-
-#btnReload:hover {
-  background: #ddd;
-}
-
 @keyframes rolldown {
   0% {
     visibility: visible;
@@ -226,4 +210,44 @@ body {
   }
 }
 
+.main-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px #7bc5ae;
+}
+
+.rank {
+  background-color: #fff;
+  color: #7bc5ae;
+  border-radius: 5px;
+  border: 1px solid #7bc5ae;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #fff;
+  color: #7bc5ae;
+  border-radius: 5px;
+  border: 1px solid #7bc5ae;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.pagination button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #7bc5ae;
+  color: #fff;
+}
 </style>

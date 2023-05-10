@@ -13,6 +13,10 @@ const routes = [
     {
         path: '/home/detail/:id',
         component: () => import('../views/detail')
+    },
+    {
+        path: '/home/rank',
+        component: () => import('../views/rank')
     }
 ]
 
