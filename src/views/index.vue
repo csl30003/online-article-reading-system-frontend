@@ -217,7 +217,7 @@ input::placeholder {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: #ccc;
+  background: #7bc5ae;
   background-size: cover;
 }
 
@@ -304,7 +304,7 @@ input::placeholder {
   font-weight: 500;
   line-height: 1em;
   text-transform: uppercase;
-  color: #e8716d;
+  color: #7bc5ae;
   letter-spacing: .1rem;
 }
 
@@ -348,7 +348,7 @@ input::placeholder {
 }
 
 .user_options-forms .forms_buttons-action {
-  background-color: #e8716d;
+  background-color: #7bc5ae;
   border-radius: 3px;
   padding: 10px 35px;
   font-size: 1rem;
@@ -361,7 +361,7 @@ input::placeholder {
 }
 
 .user_options-forms .forms_buttons-action:hover {
-  background-color: #e14641;
+  background-color: #7bc5ae;
 }
 
 .user_options-forms .user_forms-signup,
