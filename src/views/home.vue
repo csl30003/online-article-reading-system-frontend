@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="rolldown-list" id="myList">
-      <li v-for="(item, index) in paginatedItems" :key="index">
+      <li v-for="(item, index) in paginatedItems" :key="index" @click="goToDetail(item.id)">
         <div class="title">{{ item.title }}</div>
         <div class="content">{{ item.content }}</div>
       </li>
@@ -83,6 +83,11 @@ const fetchData = async () => {
         })
   }
 
+}
+
+// 查看文章详情
+const goToDetail = (id) => {
+  router.push('/home/detail/' + id)
 }
 
 // 刷新数据
