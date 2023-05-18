@@ -17,6 +17,10 @@ const routes = [
     {
         path: '/home/rank',
         component: () => import('../views/rank')
+    },
+    {
+        path: '/home/upload',
+        component: () => import('../views/upload')
     }
 ]
 

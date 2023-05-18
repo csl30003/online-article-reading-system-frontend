@@ -12,6 +12,8 @@
 
   <button class="rank" @click="rank">排行榜</button>
 
+  <button class="upload" @click="upload">上传文章</button>
+
   <div class="pagination">
     <button :disabled="currentPage === 1" @click="prevPage">上一页</button>
     <button v-for="page in pages" :key="page" :class="{active: currentPage === page}" @click="currentPage = page">
@@ -92,8 +94,14 @@ const goToDetail = (id) => {
   router.push('/home/detail/' + id)
 }
 
+// 排行榜
 const rank = () => {
   router.push('/home/rank')
+}
+
+// 上传文章
+const upload = () => {
+  router.push('/home/upload')
 }
 
 // 监听currentPage变化，获取数据
@@ -218,6 +226,15 @@ body {
 }
 
 .rank {
+  background-color: #fff;
+  color: #7bc5ae;
+  border-radius: 5px;
+  border: 1px solid #7bc5ae;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.upload {
   background-color: #fff;
   color: #7bc5ae;
   border-radius: 5px;
